@@ -1,0 +1,43 @@
+{
+    "manifest_version": 3,
+    "name": "Paris' Arrow Facebook Post",
+    "author": "David C Cavalcante",
+    "homepage_url": "https://github.com/Takk8IS",
+    "version": "1.0.0",
+    "description": "Swiftly report Facebook sponsored posts in sequence, like Paris' arrow striking Achilles' heel.",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+        "default_title": "Paris' Arrow Facebook Post",
+        "default_popup": "popup.html",
+        "default_icon": {
+            "48": "images/icon48.png",
+            "72": "images/icon72.png",
+            "96": "images/icon96.png",
+            "128": "images/icon128.png",
+            "144": "images/icon144.png",
+            "192": "images/icon192.png",
+            "512": "images/icon512.png",
+            "1024": "images/icon1024.png"
+        }
+    },
+    "icons": {
+        "48": "images/icon48.png",
+        "72": "images/icon72.png",
+        "96": "images/icon96.png",
+        "128": "images/icon128.png",
+        "144": "images/icon144.png",
+        "192": "images/icon192.png",
+        "512": "images/icon512.png",
+        "1024": "images/icon1024.png"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.facebook.com/*"],
+            "js": ["popup.js"],
+            "run_at": "document_idle"
+        }
+    ]
+}
